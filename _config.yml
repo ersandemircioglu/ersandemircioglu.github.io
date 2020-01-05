@@ -1,1 +1,41 @@
-theme: jekyll-theme-cayman
+description: > # this means to ignore newlines until "baseurl:"
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ersandemircioglu.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+tag_color: primary # danger, success, warning, primary, info, secondary
+
+# Collections
+collections:
+  topics:
+    output: true
+    permalink: /:collection/:path
+  projects:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  - scope:
+      path: "_topics"
+      type: "topics"
+    values:
+      layout: page
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "post"
